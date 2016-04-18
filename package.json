@@ -16,6 +16,7 @@
     "test:stress": "./scripts/test-stress",
     "test:hooks-handlers": "coffee ./scripts/test-hooks-handlers.coffee",
     "prepublish": "npm run compile",
+    "postinstall": "npm run compile",
     "coverage": "./scripts/cov",
     "coveralls": "npm run coverage && cat ./cov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
@@ -26,7 +27,7 @@
   "dependencies": {
     "advisable": "~0.2.0",
     "async": "^0.9.x",
-    "blueprint-transactions": "^0.0.2",
+    "blueprint-transactions": "git+https://github.com/nweber/blueprint-transactions.git#request-names",
     "chai": "^3.4.1",
     "clone": "^1.0.0",
     "coffee-script": "^1.9.1",
@@ -41,7 +42,7 @@
     "node-uuid": "~1.4.2",
     "optimist": "~0.6.1",
     "pitboss-ng": "^0.3.1",
-    "protagonist": "1.2.6",
+    "protagonist": "^1.3.0",
     "proxyquire": "~1.7.x",
     "request": "^2.53.0",
     "setimmediate": "^1.0.2",
