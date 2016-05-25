@@ -1,0 +1,22 @@
+sudo: "required"
+dist: "trusty"
+language: "node_js"
+env:
+  global:
+    - secure: "STxhfQh/AHeyRJgErinjZrjnJDChHKLctjqAUDwiIWcZZonopfB8DNp6DgcCHj6FPCTfcHeWdjQjvOiC6ZZugMcMUwzhi+PdDR4kDVP3GoeaMcKC2ckkdjapcA+mnmJDLF35FjhK6PvR1zpRbwlwiYpIayKHEjdgEzna3RmfRH8="
+node_js:
+  - "0.10"
+  - "0.12"
+  - "iojs-v2.5.0"
+  - "4"
+  - "5"
+before_install:
+  - "npm -g install npm@latest"
+  - "gem install travis"
+before_script:
+  - "npm run lint"
+script:
+  - "npm test"
+  - "npm run test:hooks-handlers"
+after_success:
+  - "npm run coveralls"

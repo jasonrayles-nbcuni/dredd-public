@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dredd — HTTP API Testing Framework
 
 [![Build Status](https://travis-ci.org/apiaryio/dredd.svg?branch=master)](https://travis-ci.org/apiaryio/dredd)
@@ -7,15 +6,11 @@
 [![Coverage Status](https://coveralls.io/repos/apiaryio/dredd/badge.svg?branch=master)](https://coveralls.io/r/apiaryio/dredd?branch=master)
 [![Join the chat at https://gitter.im/apiaryio/dredd](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/apiaryio/dredd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-![Dredd - HTTP API Testing Framework](img/dredd.png?v=3&raw=true)
+![Dredd API Blueprint testing tool](https://raw.github.com/apiaryio/dredd/master/img/dredd.png?v=3&raw=true)
 
 > **Dredd is a language-agnostic command-line tool for validating
 API documentation written in [API Blueprint][] format against its backend
 implementation.**
-
-- [Documentation][]
-- [Changelog][]
-- [Contributor's Guidelines][]
 
 Dredd reads your API description and step by step validates whether your API
 implementation replies with responses as they are described in the
@@ -41,42 +36,40 @@ Dredd supports writing [hooks](http://dredd.readthedocs.org/en/latest/hooks/)
 - [Jenkins][]
 - _...and any other *nix based CI!_
 
-## Installation
+## Documentation Reference
 
-```
-$ npm install -g dredd
-```
+1. [Overview](overview.md)
+2. [Quickstart](quickstart.md)
+3. [Usage](usage.md)
+4. [Hooks](hooks.md)
+5. [Ruby Hooks](hooks-ruby.md)
+6. [Python Hooks](hooks-python.md)
+7. [Node.js Hooks](hooks-nodejs.md)
+8. [PHP Hooks](hooks-php.md)
+9. [Sandboxed JavaScript Hooks](hooks-js-sandbox.md)
+10. [Hooks in new language](hooks-new-language.md)
+11. [Example application](example.md)
 
-## Quick Start
+## Useful Links
 
-1.  Create an [API Blueprint][] file called `api-description.apib`.
-    Follow [tutorial at API Blueprint website][API Blueprint tutorial]
-    or just take one of the [ready-made examples][API Blueprint examples].
-2.  Run interactive configuration:
+- [GitHub Repository][]
+- [Bug Tracker][]
+- [Changelog][]
+- [Contributor's Guidelines][]
 
-    ```shell
-    $ dredd init
-    ```
-3.  Run Dredd:
+## Example Applications
 
-    ```shell
-    $ dredd
-    ```
-4.  To see how to use all Dredd's features, browse the
-    [full documentation][Documentation].
+- [Express.js](http://github.com/apiaryio/dredd-example)
+- [Ruby on Rails](https://gitlab.com/theodorton/dredd-test-rails/)
 
 
 [API Blueprint]: http://apiblueprint.org/
-[API Blueprint tutorial]: https://apiblueprint.org/documentation/tutorial.html
-[API Blueprint examples]: https://github.com/apiaryio/api-blueprint/tree/master/examples
 
-[Documentation]: http://dredd.readthedocs.org/en/latest/
-[Changelog]: CHANGELOG.md
-[Contributor's Guidelines]: CONTRIBUTING.md
+[GitHub Repository]: https://github.com/apiaryio/dredd
+[Bug Tracker]: https://github.com/apiaryio/dredd/issues?q=is%3Aopen
+[Changelog]: https://github.com/apiaryio/dredd/blob/master/CHANGELOG.md
+[Contributor's Guidelines]: https://github.com/apiaryio/dredd/blob/master/CONTRIBUTING.md
 
 [Travis CI]: https://travis-ci.org/
 [CircleCI]: https://circleci.com/
 [Jenkins]: http://jenkins-ci.org/
-=======
-# dredd-
->>>>>>> 6b7975bd25556eead809cc4f2c7945a1c84baf5a
