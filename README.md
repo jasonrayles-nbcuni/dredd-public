@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dredd — HTTP API Testing Framework
 
 [![Build Status](https://travis-ci.org/apiaryio/dredd.svg?branch=master)](https://travis-ci.org/apiaryio/dredd)
@@ -77,6 +76,3 @@ $ npm install -g dredd
 [Travis CI]: https://travis-ci.org/
 [CircleCI]: https://circleci.com/
 [Jenkins]: http://jenkins-ci.org/
-=======
-# dredd-
->>>>>>> 6b7975bd25556eead809cc4f2c7945a1c84baf5a
