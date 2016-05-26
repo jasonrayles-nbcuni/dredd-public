@@ -31,6 +31,8 @@ class ApiaryReporter
       apiUrl: @_get 'apiaryApiUrl', 'APIARY_API_URL', 'https://api.apiary.io'
       apiToken: @_get 'apiaryApiKey', 'APIARY_API_KEY', null
       apiSuite: @_get 'apiaryApiName', 'APIARY_API_NAME', null
+      proxyHost: @_get 'proxyHost', 'PROXY_HOST', null
+      proxyPort: @_get 'proxyPort', 'PROXY_PORT', null
 
     logger.info 'Using apiary reporter.'
     if not @configuration.apiToken? and not @configuration.apiSuite?
@@ -228,16 +230,20 @@ class ApiaryReporter
         return callback(undefined, res, parsedBody)
 
     parsedUrl = url.parse @configuration['apiUrl']
+    hostToUse = @configuration['proxyHost'] || parsedUrl['hostname']
+    portToUse = @configuration['proxyPort'] || parsedUrl['port']
+    pathToUse = @configuration['apiUrl'] + path
     system = os.type() + ' ' + os.release() + '; ' + os.arch()
 
     postData = JSON.stringify body
 
     options =
-      host: parsedUrl['hostname']
-      port: parsedUrl['port']
-      path: path
+      host: hostToUse
+      port: portToUse
+      path: pathToUse
       method: method
       headers:
+        'Host': parsedUrl['hostname'],
         'User-Agent': "Dredd REST Reporter/" + packageConfig['version'] + " (" + system + ")"
         'Content-Type': 'application/json'
         'Content-Length': Buffer.byteLength(postData, 'utf8')
