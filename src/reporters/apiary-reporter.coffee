@@ -33,6 +33,7 @@ class ApiaryReporter
       apiSuite: @_get 'apiaryApiName', 'APIARY_API_NAME', null
       proxyHost: @_get 'proxyHost', 'PROXY_HOST', null
       proxyPort: @_get 'proxyPort', 'PROXY_PORT', null
+      proxyProtocol: @_get 'proxyProtocol', 'PROXY_PROTOCOL', null
 
     logger.info 'Using apiary reporter.'
     if not @configuration.apiToken? and not @configuration.apiSuite?
@@ -232,6 +233,7 @@ class ApiaryReporter
     parsedUrl = url.parse @configuration['apiUrl']
     hostToUse = @configuration['proxyHost'] || parsedUrl['hostname']
     portToUse = @configuration['proxyPort'] || parsedUrl['port']
+    protocolToUse = @configuration['proxyProtocol'] || parsedUrl['protocol ']
     pathToUse = @configuration['apiUrl'] + path
     system = os.type() + ' ' + os.release() + '; ' + os.arch()
 
@@ -264,7 +266,7 @@ class ApiaryReporter
       else
         return callback error, req, null
 
-    if @configuration.apiUrl?.indexOf('https') is 0
+    if protocolToUse?.indexOf('https') is 0
       if @verbose
         logger.log 'Starting REST Reporter HTTPS Request'
       req = https.request options, handleResponse
